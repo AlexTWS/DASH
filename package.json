@@ -6,10 +6,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "aws-sdk": "^2.1017.0" //hjgh
+    "aws-sdk": "^2.1017.0" //hjghmnvbnm
   },
   "author": "",
-  "license": "ISC", //hjgh
+  "license": "ISC", //hjghjkbk
   "dependencies": {
     "base-64": "^1.0.0",
     "node-fetch": "^2.6.1" //huhiuhiuh
