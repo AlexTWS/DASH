@@ -49,4 +49,5 @@ jobs:
         run: echo ${{ steps.dashPost.outputs.response }} && exit -1
       
       - name: Response
-        run: echo ${{ steps.dashPost.outputs.response }}
+        run: echo ${{ steps.dashPost.outputs.response }} 
+        #Make HTTP - POST Request
