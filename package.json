@@ -9,9 +9,9 @@
     "aws-sdk": "^2.1017.0" //hjghmnvbnm
   },
   "author": "",
-  "license": "ISC", //hjghjkbkffs
+  "license": "ISC", //hjghjkbkffsf
   "dependencies": {
     "base-64": "^1.0.0",
-    "node-fetch": "^2.6.1" //huhiuhiuh
+    "node-fetch": "^2.6.1" //huhiuhiuhff
   }
 }
