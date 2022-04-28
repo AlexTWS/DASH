@@ -1,10 +1,8 @@
-# This is a basic workflow to help you get started with Actionsc
-
-name: KICS Scanning - ECS Serverless
+name: ComplySource DASH Scanning - ECS Serverless
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch.
+  # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches:
     - main
@@ -40,9 +38,9 @@ jobs:
         id: dashPost
         uses: fjogeleit/http-request-action@master
         with:
-          url: 'https://qkqma8d040.execute-api.us-east-1.amazonaws.com/default/scan'
+          url: 'https://complysource.dashsdk.com/default/scan'
           method: 'POST'
-          data: '{  "Repository": "${{ github.repository }}", "Author": "${{ github.event.pusher.name }}", "Branch": "${{ steps.extract_branch.outputs.branch }}", "SHA": "${{ github.sha }}", "Message": "${{ github.event.head_commit.message }}", "Token": "${{ secrets.USER_GH_TOKEN }}", "OrganizationCode": "${{ secrets.ORGANIZATION_CODE }}", "LicenceKey": "${{ secrets.LICENCE_KEY }}", "AccessToken": "${{ secrets.ACCESS_TOKEN }}", "DashUrl": "${{ secrets.DASH_URL }}" }'
+          data: '{  "Repository": "${{ github.repository }}", "Author": "${{ github.event.pusher.name }}", "Branch": "${{ steps.extract_branch.outputs.branch }}", "SHA": "${{ github.sha }}", "Message": "${{ github.event.head_commit.message }}", "Token": "${{ secrets.DASH_REPO_TOKEN }}", "OrganizationCode": "${{ secrets.DASH_ORGANIZATION_CODE }}", "LicenceKey": "${{ secrets.DASH_LICENCE_KEY }}", "AccessToken": "${{ secrets.DASH_ACCESS_TOKEN }}", "DashUrl": "${{ secrets.DASH_API_ENDPOINT }}" }'
         
       - name: Failed response
         if: ${{ fromJson(steps.dashPost.outputs.response).statusCode != 200 }}
@@ -50,4 +48,3 @@ jobs:
       
       - name: Response
         run: echo ${{ steps.dashPost.outputs.response }}
-        #Test2
