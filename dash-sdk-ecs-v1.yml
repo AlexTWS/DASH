@@ -41,7 +41,11 @@ Resources:
   
   TaskDefinition:
     Type: AWS::ECS::TaskDefinition
+<<<<<<< HEAD
     # Makes sure the log group is created before it is used.111111111
+=======
+    # Makes sure the log group is created before it is used.111
+>>>>>>> ef2e8c1632ced40d2904ae600f9c99914e75ee8e
     DependsOn: LogGroup
     Properties:
       # Name of the task definition. Subsequent versions of the task definition are grouped together under this name.
